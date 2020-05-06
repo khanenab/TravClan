@@ -34,6 +34,7 @@ INSTALLED_APPS = [
 
     #My apps
     'personal',
+    'rest_framework',
 
     # Django apps
     'django.contrib.admin',

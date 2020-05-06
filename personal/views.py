@@ -4,10 +4,11 @@ from personal.models import Transaction
 
 # Create your views here.
 
-def home_screen_view(request):
-	wallets = Wallet.objects.all()
+#def home_screen_view(request):
+#	wallets = Wallet.objects.all()
 
-	context = {
-		'wallets' : wallets,
-	}
-	return render(request, "base.html", context)
+#	context = {
+#		'wallets' : wallets,
+#	}
+#	return render(request, "base.html", context)
+

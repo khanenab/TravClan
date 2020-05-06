@@ -2,7 +2,10 @@ appdirs==1.4.3
 asgiref==3.2.7
 distlib==0.3.0
 Django==3.0.5
+django-filter==2.2.0
+djangorestframework==3.11.0
 filelock==3.0.12
+Markdown==3.2.1
 pytz==2020.1
 six==1.14.0
 sqlparse==0.3.1

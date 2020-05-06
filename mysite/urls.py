@@ -16,12 +16,24 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from personal.views import (
-	home_screen_view,
-)
+from django.conf.urls import url, include
+from rest_framework import routers, viewsets
+
+from personal.models import Wallet
+from personal.models import Transaction 
+
+from personal.serializers import WalletSerializer
+
+class WalletViewSet(viewsets.ModelViewSet):
+    queryset = Wallet.objects.all()
+    serializer_class = WalletSerializer
+
+
+# Routers provide an easy way of automatically determining the URL conf.
+router = routers.DefaultRouter()
+router.register(r'wallets', WalletViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home_screen_view),
-
+    url(r'^', include(router.urls)),
 ]
