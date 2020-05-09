@@ -24,13 +24,13 @@ def create_user_wallet(sender, instance, created, **kwargs):
 
 @receiver(post_save, sender=User)
 def save_user_wallet(sender, instance, **kwargs):
-    instance.wallet.save()
+	instance.wallet.save()
 
 
 
 class Transaction(models.Model):
 	TRANSACTION_ID				= models.AutoField(primary_key = True,)
-	DATE_CREATED				= models.DateTimeField(blank = False, default = datetime.now(),)
+	DATE_CREATED				= models.DateTimeField(blank = False, default = datetime.now,)
 	AMOUNT 						= models.PositiveIntegerField()
 	RUNNING_BALANCE_SENDER 		= models.IntegerField(default = 0,)
 	RUNNING_BALANCE_RECEIVER	= models.IntegerField(default = 0,)
